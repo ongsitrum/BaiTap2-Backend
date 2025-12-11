@@ -1,0 +1,11 @@
+name: Auto Deploy Backend
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy-render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Goi Render cap nhat code moi
+        run: curl "${{ secrets.RENDER_DEPLOY_HOOK }}"
